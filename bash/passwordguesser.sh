@@ -9,18 +9,41 @@
 # TASK 3: Improve it by giving them 5 tries to get it right before failing
 #           *** Do not use the exit command, and do not use a loop (e.g. while or for)
 
-echo -n "guess the user passowrd:  "
+echo -n "guess the user password:  "
+referenceString="Password"
+
 read TestString
-referenceString="password"
-
-
-if [ $TestString == $referenceString ] && echo "The password guess is correct" || echo "The password guess is incorrect" ; then read -p $TestString
-fi
-if [ $TestString == $referenceString ] && echo "The password guess is correct" || echo "The password guess is incorrect" ; then read -p $TestString
-fi
-if [ $TestString == $referenceString ] && echo "The password guess is correct" || echo "The password guess is incorrect"; then read -p $TestString
-fi
-if [ $TestString == $referenceString ] && echo "The password guess is correct" || echo "The password guess is incorrect"; then read -p $TestString
-fi
-if [ $TestString == $referenceString ] && echo "The password guess is correct" || echo "The password guess is incorrect"; then read -p $TestString
-fi
+if [ $TestString == $referenceString ];then
+  echo "The password guess is correct"
+  else
+    echo "the password is incorrect"
+    echo "Try again 2nd Time"
+    read TestString
+    if [ $TestString == $referenceString ];then
+      echo "The password guess is correct"
+      else
+        echo "the password is incorrect"
+        echo "Try again 3rd Time"
+        read TestString
+        if [ $TestString == $referenceString ];then
+          echo "The password guess is correct"
+          else
+            echo "the password is incorrect"
+            echo "Try again 4th Time"
+            read TestString
+            if [ $TestString == $referenceString ];then
+              echo "The password guess is correct"
+              else
+                echo "the password is incorrect"
+                echo "Try again 5th Time"
+                read TestString
+                if [ $TestString == $referenceString ];then
+                  echo "The password guess is correct"
+                  else
+                    echo "the password is incorrect"
+                    echo "You are done you dumb ass"
+                  fi
+              fi
+          fi
+      fi
+  fi
